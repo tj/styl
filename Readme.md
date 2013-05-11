@@ -17,20 +17,20 @@ $ npm install -g styl
 
   All of the Rework features and plugins are available immediately with no configuration including:
 
-    - automatic vendor-prefixed properties
-    - automatic vendor-prefixed values
-    - automatic vendor-prefixed keyframes
-    - additional easing functions
-    - transparent support for retina resolution images
-    - rgba color helpers (`rgba(#fc0, .5)`)
-    - property reference support (`height: @width`)
-    - several [mixins](https://github.com/visionmedia/rework-mixins)
-    - optional whitespace significant syntax
-    - placeholder selectors
-    - selector extensions
-    - parent selector reference
-    - nested selectors
-    - command-line executable
+  - automatic vendor-prefixed properties
+  - automatic vendor-prefixed values
+  - automatic vendor-prefixed keyframes
+  - additional easing functions
+  - transparent support for retina resolution images
+  - rgba color helpers (`rgba(#fc0, .5)`)
+  - property reference support (`height: @width`)
+  - several [mixins](https://github.com/visionmedia/rework-mixins)
+  - optional whitespace significant syntax
+  - placeholder selectors
+  - selector extensions
+  - parent selector reference
+  - nested selectors
+  - command-line executable
 
 ## styl(1)
 
