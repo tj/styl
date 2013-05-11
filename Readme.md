@@ -47,7 +47,7 @@ Options:
 
 ## Examples
 
-### CSS
+### CSS syntax
 
   Regular css free of vendor prefixing:
 
@@ -60,7 +60,7 @@ Options:
 }
 ```
 
-  Compile with the executable:
+  Compiled with the following command:
 
 ```
 $ styl < simple.css > out.css
@@ -82,6 +82,53 @@ $ styl < simple.css > out.css
   background: linear-gradient(top, black, white)
 }
 ```
+
+### Whitespace significant syntax
+
+  The Sass-style whitespace significant syntax supports nesting and parent selector references. Currently the CSS style does not, however this may likely change in the future.
+
+```css
+
+ul
+  margin: 0
+  li
+    list-style: none
+    a
+      display: block
+      text-decoration: none
+      padding: 5px 10px
+      &:hover
+        text-decoration: underline
+```
+
+  Compiled with the following command:
+
+```
+$ styl -w < simple.styl > out.css
+```
+
+  Yields:
+
+```css
+ul {
+  margin: 0
+}
+
+ul li a:hover {
+  text-decoration: underline
+}
+
+ul li a {
+  display: block;
+  text-decoration: none;
+  padding: 5px 10px
+}
+
+ul li {
+  list-style: none
+}
+```
+
 
 ## License
 
