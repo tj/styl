@@ -5,7 +5,7 @@
   with Stylus. If your application benefits from a runtime (conditionals, loops etc) Stylus or SASS is for you, if your application benefits from
   incredibly fast builds, simplicity, and the most transparent CSS preprocessor around Styl is for you.
 
-  Building Styl on top of Rework drastically reduces complexity, as Rework itself is comprised of multiple smaller pieces and plugins. If you wish to include custom plugins or configure Styl beyond its defaults the interface is the same as Rework.
+  Building Styl on top of Rework drastically reduces complexity, as Rework itself is comprised of multiple smaller pieces, plugins, and has no complex runtime. If you wish to include custom plugins or configure Styl beyond its defaults the interface is the same as Rework.
 
 ## Installation
 
