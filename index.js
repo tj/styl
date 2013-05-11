@@ -20,7 +20,7 @@ module.exports = Style;
  *
  * Options:
  *
- *  - `whitespace utilize css whitespace transformations
+ *  - `whitespace` utilize css whitespace transformations
  *
  * @param {String} str
  * @param {Object} options
