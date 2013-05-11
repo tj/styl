@@ -1,0 +1,4 @@
+button {
+  width: 50px;
+  height: @width;
+}

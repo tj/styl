@@ -1,0 +1,34 @@
+#!/usr/bin/env node
+
+/**
+ * Module dependencies.
+ */
+
+var program = require('commander');
+var pkg = require('../package.json');
+var stdin = require('stdin');
+var Style = require('..');
+
+// options
+
+program
+  .version(pkg.version)
+  .option('-v, --vendors <list>', 'vendor prefixes to apply [o,ms,moz,webkit]', 'o,ms,moz,webkit')
+  .option('-w, --whitespace', 'use significant whitespace pre-processor')
+  .parse(process.argv);
+
+// prefixes
+
+var vendors = program.vendors.split(',').map(function(v){
+  return '-' + v + '-';
+});
+
+// stdin
+
+stdin(function(str){
+  var options = {};
+  options.whitespace = program.whitespace;
+  var style = new Style(str, options);
+  style.vendors(vendors);
+  process.stdout.write(style.toString());
+});

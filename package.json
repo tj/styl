@@ -1,0 +1,20 @@
+{
+  "name": "styl",
+  "description": "CSS pre-processor built on Rework",
+  "version": "0.0.1",
+  "dependencies": {
+    "css-whitespace": "~1.0.0",
+    "debug": "~0.7.2",
+    "rework": "~0.14.0",
+    "commander": "~1.1.1",
+    "stdin": "0.0.1",
+    "rework-mixins": "~1.0.3"
+  },
+  "devDependencies": {
+    "should": "~1.2.2",
+    "mocha": "~1.9.0"
+  },
+  "bin": {
+    "styl": "bin/styl"
+  }
+}

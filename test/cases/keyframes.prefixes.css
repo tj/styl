@@ -1,0 +1,9 @@
+
+@keyframes animate {
+  from {
+    transform: rotateX(0)
+  }
+  to {
+    transform: rotateX(150deg)
+  }
+}
