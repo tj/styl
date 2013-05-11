@@ -45,6 +45,44 @@ Options:
   -w, --whitespace      use significant whitespace pre-processor
 ```
 
+## Examples
+
+### CSS
+
+  Regular css free of vendor prefixing:
+
+```css
+#logo {
+  width: 50px;
+  height: @width;
+  absolute: top 100px left 50%;
+  background: linear-gradient(top, black, white);
+}
+```
+
+  Compile with the executable:
+
+```
+$ styl < simple.css > out.css
+```
+
+  Yields:
+
+```css
+#logo {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  background: -o-linear-gradient(top, black, white);
+  background: -ms-linear-gradient(top, black, white);
+  background: -moz-linear-gradient(top, black, white);
+  background: -webkit-linear-gradient(top, black, white);
+  background: linear-gradient(top, black, white)
+}
+```
+
 ## License
 
   MIT
