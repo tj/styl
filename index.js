@@ -28,6 +28,7 @@ module.exports = Style;
  */
 
 function Style(str, options) {
+  if (!(this instanceof Style)) return new Style(str, options);
   options = options || {};
   if (options.whitespace) str = whitespace(str);
   this.str = str;
