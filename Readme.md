@@ -35,16 +35,14 @@ $ npm install -g styl
 ## styl(1)
 
 ```
+Usage: styl [options]
 
-  Usage: styl [options]
+Options:
 
-  Options:
-
-    -h, --help            output usage information
-    -V, --version         output the version number
-    -v, --vendors <list>  vendor prefixes to apply [o,ms,moz,webkit]
-    -w, --whitespace      use significant whitespace pre-processor
-
+  -h, --help            output usage information
+  -V, --version         output the version number
+  -v, --vendors <list>  vendor prefixes to apply [o,ms,moz,webkit]
+  -w, --whitespace      use significant whitespace pre-processor
 ```
 
 ## License
