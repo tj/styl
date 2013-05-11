@@ -1,7 +1,7 @@
 
 # Styl
 
-  Work in progress spirtual successor of [Stylus](https://github.com/LearnBoost/stylus) built on top of [Rework](https://github.com/visionmedia/rework). Styl is basically an opinionated configuration of Rework, and does not aim for feature parity
+  Work in progress CSS processor, spirtual successor of [Stylus](https://github.com/LearnBoost/stylus) built on top of [Rework](https://github.com/visionmedia/rework). Styl is basically an opinionated configuration of Rework, and does not aim for feature parity
   with Stylus. If your application benefits from a runtime (conditionals, loops etc) Stylus or SASS is for you, if your application benefits from
   incredibly fast builds, simplicity, and the most transparent CSS preprocessor around Styl is for you.
 
