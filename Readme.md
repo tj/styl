@@ -1,17 +1,17 @@
 # Styl
 
-  Work-in-progress CSS preprocessor. 
-  Spiritual successor of [Stylus](https://github.com/LearnBoost/stylus). 
-  Built on top of [Rework](https://github.com/visionmedia/rework). 
-  
-  Styl is basically an opinionated configuration of Rework. It does not aim for feature parity with Stylus. 
-  
-  If your application benefits from a runtime (conditionals, loops etc.), then Stylus is for you. 
-  If your application benefits from incredibly fast builds, simplicity, and the most transparent CSS 
+  Work-in-progress CSS preprocessor.
+  Spiritual successor of [Stylus](https://github.com/LearnBoost/stylus).
+  Built on top of [Rework](https://github.com/visionmedia/rework).
+
+  Styl is basically an opinionated configuration of Rework. It does not aim for feature parity with Stylus.
+
+  If your application benefits from a runtime (conditionals, loops etc.), then Stylus is for you.
+  If your application benefits from incredibly fast builds, simplicity, and the most transparent CSS
   preprocessor around, then Styl is for you.
 
-  Building Styl on top of Rework drastically reduces complexity. That’s because Rework is comprised of multiple 
-  smaller pieces, plugins, and has no complex runtime. If you wish to include custom plugins, or configure Styl 
+  Building Styl on top of Rework drastically reduces complexity. That’s because Rework is comprised of multiple
+  smaller pieces, plugins, and has no complex runtime. If you wish to include custom plugins, or configure Styl
   beyond its defaults, the interface is the same as Rework.
 
 ## Installation
@@ -61,7 +61,7 @@ Options:
 ```css
 #logo {
   width: 50px;
-  height: 50px;
+  height: @width;
   absolute: top 100px left 50%;
   background: linear-gradient(top, black, white);
 }
@@ -92,7 +92,7 @@ $ styl < simple.css > out.css
 
 ### Whitespace significant syntax
 
-  The SASS-style (significant whitespace) syntax supports nesting and parent selector references. 
+  The SASS-style (significant whitespace) syntax supports nesting and parent selector references.
   Currently, the CSS style does not; however this is likely to change in the future.
 
 ```css
