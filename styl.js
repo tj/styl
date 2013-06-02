@@ -3338,6 +3338,7 @@ module.exports = Style;
  * Options:
  *
  *  - `whitespace` utilize css whitespace transformations
+ *  - `compress` enable output compression
  *
  * @param {String} str
  * @param {Object} options
@@ -3349,6 +3350,7 @@ function Style(str, options) {
   options = options || {};
   if (options.whitespace) str = whitespace(str);
   this.str = str;
+  this.compress = options.compress;
   this.rework = rework(str);
   this.delegate(['vendors', 'use']);
   this.vendors(['-ms-', '-moz-', '-webkit-']);
@@ -3369,15 +3371,13 @@ Style.prototype.delegate = function(methods){
 };
 
 /**
- * Return the compiled CSS with `options` passed to rework.
+ * Return the compiled CSS.
  *
- * @param {Object} options
  * @return {String}
  * @api public
  */
 
-Style.prototype.toString = function(options){
-  options = options || {};
+Style.prototype.toString = function(){
   this.use(rework.mixin(mixins));
   this.use(rework.keyframes());
   this.use(rework.ease());
@@ -3389,7 +3389,7 @@ Style.prototype.toString = function(options){
   this.use(rework.references());
   this.use(rework.at2x());
   this.use(rework.extend());
-  return this.rework.toString(options);
+  return this.rework.toString({ compress: this.compress });
 };
 
 });
