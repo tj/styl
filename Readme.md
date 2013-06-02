@@ -157,7 +157,7 @@ ul li {
   - `compress` enable output compression [false]
 
 ```js
-var styl = require('styl');
+var styl = require('styl');
 var css = styl('body\n  color: blue', { whitespace: true }).toString();
 ```
 
