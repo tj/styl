@@ -58,6 +58,7 @@ Options:
   -V, --version         output the version number
   -v, --vendors <list>  vendor prefixes to apply [o,ms,moz,webkit]
   -w, --whitespace      use significant whitespace pre-processor
+  -c, --compress        use output compression
 ```
 
 ## Examples

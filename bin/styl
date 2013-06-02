@@ -15,6 +15,7 @@ program
   .version(pkg.version)
   .option('-v, --vendors <list>', 'vendor prefixes to apply [o,ms,moz,webkit]', 'o,ms,moz,webkit')
   .option('-w, --whitespace', 'use significant whitespace pre-processor')
+  .option('-c, --compress', 'use output compression')
   .parse(process.argv);
 
 // prefixes
@@ -28,7 +29,8 @@ var vendors = program.vendors.split(',').map(function(v){
 stdin(function(str){
   var options = {};
   options.whitespace = program.whitespace;
+  options.compress = program.compress;
   var style = new Style(str, options);
   style.vendors(vendors);
-  process.stdout.write(style.toString());
+  process.stdout.write(style.toString(options));
 });
