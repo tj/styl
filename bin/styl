@@ -32,5 +32,5 @@ stdin(function(str){
   options.compress = program.compress;
   var style = new Style(str, options);
   style.vendors(vendors);
-  process.stdout.write(style.toString(options));
+  process.stdout.write(style.toString());
 });
