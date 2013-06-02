@@ -1,7 +1,7 @@
 {
   "name": "styl",
   "description": "CSS pre-processor built on Rework",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "dependencies": {
     "css-whitespace": "1.0.0",
     "debug": "*",
