@@ -20,6 +20,14 @@
 $ npm install -g styl
 ```
 
+or with component:
+
+```
+$ component install component/styl
+```
+
+or with a script tag using ./styl.js
+
 ## Features
 
   All Rework features and plugins are available out-of-the-box, including:
