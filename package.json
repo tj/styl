@@ -2,13 +2,14 @@
   "name": "styl",
   "description": "CSS pre-processor built on Rework",
   "version": "0.1.0",
+  "keywords": ["css", "stylus", "preprocessor", "style"],
   "dependencies": {
     "css-whitespace": "1.1.0",
     "debug": "*",
     "rework": "0.15.0",
     "commander": "1.1.1",
     "stdin": "0.0.1",
-    "rework-mixins": "1.0.3"
+    "rework-mixins": "1.1.1"
   },
   "devDependencies": {
     "should": "~1.2.2",

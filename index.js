@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 
 /**
  * Module dependencies.
@@ -52,13 +51,15 @@ Style.prototype.delegate = function(methods){
 };
 
 /**
- * Return the compiled CSS.
+ * Return the compiled CSS with `options` passed to rework.
  *
+ * @param {Object} options
  * @return {String}
  * @api public
  */
 
-Style.prototype.toString = function(){
+Style.prototype.toString = function(options){
+  options = options || {};
   this.use(rework.mixin(mixins));
   this.use(rework.keyframes());
   this.use(rework.ease());
@@ -70,5 +71,5 @@ Style.prototype.toString = function(){
   this.use(rework.references());
   this.use(rework.at2x());
   this.use(rework.extend());
-  return this.rework.toString();
+  return this.rework.toString(options);
 };

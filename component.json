@@ -1,0 +1,15 @@
+{
+  "name": "styl",
+  "repo": "visionmedia/styl",
+  "description": "CSS pre-processor built on Rework",
+  "version": "0.1.0",
+  "keywords": ["css", "stylus", "preprocessor", "style"],
+  "dependencies": {
+    "visionmedia/debug": "*",
+    "visionmedia/css-whitespace": "1.1.0",
+    "visionmedia/rework": "0.15.0",
+    "visionmedia/rework-mixins": "1.1.1"
+  },
+  "scripts": ["index.js"],
+  "main": "index.js"
+}
