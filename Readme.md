@@ -146,6 +146,24 @@ ul li {
 }
 ```
 
+## API
+
+### Styl(string, options)
+
+  Initialize a new `Styl` with the given `string` of regular CSS or
+  whitespace-significant style CSS with the following options:
+
+  - `whitespace` enable css whitespace [false]
+  - `compress` enable output compression [false]
+
+```js
+var styl = require('styl');
+var css = styl('body\n  color: blue', { whitespace: true }).toString();
+```
+
+### Styl#toString()
+
+  Convert to CSS.
 
 ## License
 
