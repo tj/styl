@@ -165,6 +165,12 @@ var css = styl('body\n  color: blue', { whitespace: true }).toString();
 
   Convert to CSS.
 
+## Projects
+
+  Projects built with Styl:
+
+  - [kube styl](https://github.com/james2doyle/kube-styl) - styl implementation of the "kube" css framework
+
 ## License
 
   MIT
