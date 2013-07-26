@@ -4,6 +4,8 @@
  * Module dependencies.
  */
 
+var fs = require('fs');
+var path = require('path');
 var program = require('commander');
 var pkg = require('../package.json');
 var stdin = require('stdin');
@@ -17,6 +19,16 @@ program
   .option('-w, --whitespace', 'use significant whitespace pre-processor')
   .option('-c, --compress', 'use output compression')
   .parse(process.argv);
+
+// plugins
+
+var plugins;
+
+try {
+  plugins = require(path.join(process.cwd(), 'plugins'));
+} catch (nothing) {  // fail silently
+  plugins = [];
+}
 
 // prefixes
 
@@ -32,5 +44,8 @@ stdin(function(str){
   options.compress = program.compress;
   var style = new Style(str, options);
   style.vendors(vendors);
+  plugins.forEach(function(plugin) {
+    style.use(plugin);
+  });
   process.stdout.write(style.toString());
 });
