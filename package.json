@@ -2,7 +2,12 @@
   "name": "styl",
   "description": "CSS pre-processor built on Rework",
   "version": "0.2.3",
-  "keywords": ["css", "stylus", "preprocessor", "style"],
+  "keywords": [
+    "css",
+    "stylus",
+    "preprocessor",
+    "style"
+  ],
   "dependencies": {
     "css-whitespace": "1.1.0",
     "debug": "*",
@@ -17,5 +22,9 @@
   },
   "bin": {
     "styl": "bin/styl"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/visionmedia/styl.git"
   }
 }
