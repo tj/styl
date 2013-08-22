@@ -17,5 +17,9 @@
   },
   "bin": {
     "styl": "bin/styl"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/visionmedia/styl.git"
   }
 }
