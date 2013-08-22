@@ -6,7 +6,7 @@
   "dependencies": {
     "css-whitespace": "1.1.0",
     "debug": "*",
-    "rework": "0.17.3",
+    "rework": "0.17.4",
     "commander": "1.1.1",
     "stdin": "0.0.1",
     "rework-mixins": "1.1.1"
