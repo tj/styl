@@ -8,6 +8,9 @@ var program = require('commander');
 var pkg = require('../package.json');
 var stdin = require('stdin');
 var Style = require('..');
+var path = require('path');
+var fs = require('fs');
+var exists = fs.existsSync || path.existsSync;
 
 // options
 
@@ -16,6 +19,7 @@ program
   .option('-v, --vendors <list>', 'vendor prefixes to apply [o,ms,moz,webkit]', 'o,ms,moz,webkit')
   .option('-w, --whitespace', 'use significant whitespace pre-processor')
   .option('-c, --compress', 'use output compression')
+  .option('-u, --use', 'use the given rework plugin(s)')
   .parse(process.argv);
 
 // prefixes
@@ -32,5 +36,18 @@ stdin(function(str){
   options.compress = program.compress;
   var style = new Style(str, options);
   style.vendors(vendors);
+
+  // require middleware plugins
+  if (program.use) {
+    var modules = program.use.split(',');
+    modules.forEach(function(mod){
+      var resolved = path.resolve(mod)
+        , real = exists(resolved) || exists(resolved + '.js')
+        , module = path.resolve('node_modules', mod);
+
+      style.use(real ? require(resolved) : require(module));
+    });
+  }
+
   process.stdout.write(style.toString());
 });
