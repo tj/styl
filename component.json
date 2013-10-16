@@ -7,7 +7,7 @@
   "dependencies": {
     "visionmedia/debug": "*",
     "visionmedia/css-whitespace": "1.1.0",
-    "visionmedia/rework": "0.17.4",
+    "visionmedia/rework": "0.18.2",
     "visionmedia/rework-mixins": "1.1.1"
   },
   "scripts": ["index.js"],
