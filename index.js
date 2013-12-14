@@ -3,6 +3,7 @@
  * Module dependencies.
  */
 
+var autoprefixer = require('autoprefixer');
 var whitespace = require('css-whitespace');
 var mixins = require('rework-mixins');
 var rework = require('rework');
@@ -34,8 +35,8 @@ function Style(str, options) {
   this.str = str;
   this.compress = options.compress;
   this.rework = rework(str);
+  this.browsers = options.browsers;
   this.delegate(['vendors', 'use']);
-  this.vendors(['-ms-', '-moz-', '-webkit-']);
 }
 
 /**
@@ -61,15 +62,11 @@ Style.prototype.delegate = function(methods){
 
 Style.prototype.toString = function(){
   this.use(rework.mixin(mixins));
-  this.use(rework.keyframes());
   this.use(rework.ease());
-  this.use(rework.prefixValue('linear-gradient'));
-  this.use(rework.prefixValue('radial-gradient'));
-  this.use(rework.prefixValue('transform'));
-  this.use(rework.prefix(props));
   this.use(rework.colors());
   this.use(rework.references());
   this.use(rework.at2x());
   this.use(rework.extend());
+  this.use(autoprefixer(this.browsers).rework);
   return this.rework.toString({ compress: this.compress });
 };
