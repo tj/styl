@@ -171,6 +171,11 @@ var css = styl('body\n  color: blue', { whitespace: true }).toString();
 
   - [kube styl](https://github.com/james2doyle/kube-styl) - styl implementation of the "kube" css framework
 
+  Build tools implementing Styl:
+  
+  - [grunt-styl](https://github.com/sindresorhus/grunt-styl) by [sindresorhus](https://github.com/sindresorhus)
+  - [gulp-styl](https://github.com/sindresorhus/gulp-styl) by [sindresorhus](https://github.com/sindresorhus)
+
 ## License
 
   MIT
