@@ -2,7 +2,12 @@
   "name": "styl",
   "description": "CSS pre-processor built on Rework",
   "version": "0.2.7",
-  "keywords": ["css", "stylus", "preprocessor", "style"],
+  "keywords": [
+    "css",
+    "stylus",
+    "preprocessor",
+    "style"
+  ],
   "dependencies": {
     "css-whitespace": "1.1.0",
     "debug": "*",
@@ -12,8 +17,8 @@
     "rework-mixins": "1.1.1"
   },
   "devDependencies": {
-    "should": "~1.2.2",
-    "mocha": "~1.9.0"
+    "mocha": "^1.20.1",
+    "should": "^4.0.4"
   },
   "bin": {
     "styl": "bin/styl"
