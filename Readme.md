@@ -20,21 +20,10 @@
 $ npm install -g styl
 ```
 
-or with component:
-
-```
-$ component install component/styl
-```
-
-or with a script tag using ./styl.js
-
 ## Features
 
   All Rework features and plugins are available out-of-the-box, including:
 
-  - automatic vendor-prefixed properties
-  - automatic vendor-prefixed values
-  - automatic vendor-prefixed keyframes
   - additional easing functions
   - transparent support for retina hi-res images
   - rgba color helpers (`rgba(#fc0, .5)`)
@@ -56,7 +45,6 @@ Options:
 
   -h, --help            output usage information
   -V, --version         output the version number
-  -v, --vendors <list>  vendor prefixes to apply [o,ms,moz,webkit]
   -w, --whitespace      use significant whitespace pre-processor
   -c, --compress        use output compression
 ```
@@ -68,11 +56,16 @@ Options:
   Regular CSS, with no vendor prefixing:
 
 ```css
-#logo {
-  width: 50px;
-  height: @width;
-  absolute: top 100px left 50%;
-  background: linear-gradient(top, black, white);
+body {
+  transition: 200ms ease-in-out-back
+}
+
+button {
+  padding: 5px 10px;
+}
+
+a.button {
+  extends: button;
 }
 ```
 
@@ -85,17 +78,13 @@ $ styl < simple.css > out.css
   Yields:
 
 ```css
-#logo {
-  width: 50px;
-  height: 50px;
-  position: absolute;
-  top: 100px;
-  left: 50%;
-  background: -o-linear-gradient(top, black, white);
-  background: -ms-linear-gradient(top, black, white);
-  background: -moz-linear-gradient(top, black, white);
-  background: -webkit-linear-gradient(top, black, white);
-  background: linear-gradient(top, black, white)
+body {
+  transition: 200ms cubic-bezier(0.680, -0.550, 0.265, 1.550);
+}
+
+button,
+a.button {
+  padding: 5px 10px;
 }
 ```
 

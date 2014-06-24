@@ -1,6 +1,0 @@
-button {
-  background: -ms-linear-gradient(top, black, white);
-  background: -moz-linear-gradient(top, black, white);
-  background: -webkit-linear-gradient(top, black, white);
-  background: linear-gradient(top, black, white);
-}

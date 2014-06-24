@@ -1,4 +1,11 @@
 
+0.2.8 / 2014-06-25
+==================
+
+ * depend on 'rework' 1.0.0
+ * remove all vendor support. see [#126](https://github.com/visionmedia/rework/issues/126)
+ * remove browser support via Component(1)
+
 0.2.7 / 2013-11-30
 ==================
 
