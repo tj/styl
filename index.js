@@ -6,7 +6,12 @@
 var whitespace = require('css-whitespace');
 var mixins = require('rework-mixins');
 var rework = require('rework');
-var props = rework.properties;
+var mixin = require('rework-plugin-mixin');
+var ease = require('rework-plugin-ease');
+var colors = require('rework-plugin-colors');
+var references = require('rework-plugin-references');
+var at2x = require('rework-plugin-at2x');
+var inherit = require('rework-inherit');
 
 /**
  * Expose `Style`.
@@ -34,8 +39,7 @@ function Style(str, options) {
   this.str = str;
   this.compress = options.compress;
   this.rework = rework(str);
-  this.delegate(['vendors', 'use']);
-  this.vendors(['-ms-', '-moz-', '-webkit-']);
+  this.delegate(['use']);
 }
 
 /**
@@ -60,16 +64,11 @@ Style.prototype.delegate = function(methods){
  */
 
 Style.prototype.toString = function(){
-  this.use(rework.mixin(mixins));
-  this.use(rework.keyframes());
-  this.use(rework.ease());
-  this.use(rework.prefixValue('linear-gradient'));
-  this.use(rework.prefixValue('radial-gradient'));
-  this.use(rework.prefixValue('transform'));
-  this.use(rework.prefix(props));
-  this.use(rework.colors());
-  this.use(rework.references());
-  this.use(rework.at2x());
-  this.use(rework.extend());
+  this.use(mixin(mixins));
+  this.use(ease());
+  this.use(colors());
+  this.use(references());
+  this.use(at2x());
+  this.use(inherit());
   return this.rework.toString({ compress: this.compress });
 };
