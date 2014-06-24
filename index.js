@@ -50,10 +50,9 @@ function Style(str, options) {
  */
 
 Style.prototype.delegate = function(methods){
-  var self = this;
   methods.forEach(function(method){
-    self[method] = self.rework[method].bind(self.rework);
-  });
+    this[method] = this.rework[method].bind(this.rework);
+  }, this);
 };
 
 /**
