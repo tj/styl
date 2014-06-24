@@ -9,7 +9,7 @@
     "style"
   ],
   "dependencies": {
-    "commander": "1.1.1",
+    "commander": "^2.2.0",
     "css-whitespace": "1.1.0",
     "debug": "*",
     "rework": "^1.0.0",
