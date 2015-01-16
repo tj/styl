@@ -7,33 +7,3 @@
     height: 50px;
   }
 }
-
-@-ms-keyframes fade {
-  from {
-    width: 50px;
-  }
-
-  to {
-    height: 50px;
-  }
-}
-
-@-moz-keyframes fade {
-  from {
-    width: 50px;
-  }
-
-  to {
-    height: 50px;
-  }
-}
-
-@-webkit-keyframes fade {
-  from {
-    width: 50px;
-  }
-
-  to {
-    height: 50px;
-  }
-}
