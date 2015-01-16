@@ -1,12 +1,26 @@
-
 /**
  * Module dependencies.
  */
 
-var whitespace = require('css-whitespace');
-var mixins = require('rework-mixins');
 var rework = require('rework');
-var props = rework.properties;
+var mixin = require('rework-plugin-mixin');
+var mixins = mixin(require('rework-mixins'));
+var variant = require('rework-variant');
+var imprt = require('rework-import');
+var whitespace = require('css-whitespace');
+
+// Load plugins.
+var plugins = [
+  'rework-plugin-ease',
+  'rework-plugin-colors',
+  'rework-plugin-references',
+  'rework-plugin-at2x',
+  'rework-inherit'
+].map(require);
+
+function call(plugin) {
+  return plugin();
+}
 
 /**
  * Expose `Style`.
@@ -31,26 +45,12 @@ function Style(str, options) {
   if (!(this instanceof Style)) return new Style(str, options);
   options = options || {};
   if (options.whitespace) str = whitespace(str);
+  this.path = options.path || '.';
   this.str = str;
   this.compress = options.compress;
   this.rework = rework(str);
-  this.delegate(['vendors', 'use']);
-  this.vendors(['-ms-', '-moz-', '-webkit-']);
+  this.use = this.rework.use.bind(this.rework);
 }
-
-/**
- * Delegate `methods` to rework.
- *
- * @param {Array} methods
- * @api private
- */
-
-Style.prototype.delegate = function(methods){
-  var self = this;
-  methods.forEach(function(method){
-    self[method] = self.rework[method].bind(self.rework);
-  });
-};
 
 /**
  * Return the compiled CSS.
@@ -60,16 +60,9 @@ Style.prototype.delegate = function(methods){
  */
 
 Style.prototype.toString = function(){
-  this.use(rework.mixin(mixins));
-  this.use(rework.keyframes());
-  this.use(rework.ease());
-  this.use(rework.prefixValue('linear-gradient'));
-  this.use(rework.prefixValue('radial-gradient'));
-  this.use(rework.prefixValue('transform'));
-  this.use(rework.prefix(props));
-  this.use(rework.colors());
-  this.use(rework.references());
-  this.use(rework.at2x());
-  this.use(rework.extend());
+  this.use(imprt({path: this.path}));
+  this.use(variant());
+  this.use(mixins);
+  plugins.map(call).forEach(this.use)
   return this.rework.toString({ compress: this.compress });
 };
