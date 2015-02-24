@@ -2,7 +2,7 @@
   "name": "styl",
   "repo": "tj/styl",
   "description": "CSS pre-processor built on Rework",
-  "version": "0.2.7",
+  "version": "0.2.9",
   "keywords": ["css", "stylus", "preprocessor", "style"],
   "dependencies": {
     "tj/debug": "*",
