@@ -8,6 +8,7 @@ var mixins = mixin(require('rework-mixins'));
 var variant = require('rework-variant');
 var imprt = require('rework-import');
 var whitespace = require('css-whitespace');
+var autoprefixer = require('autoprefixer-core');
 
 // Load plugins.
 var plugins = [
@@ -50,6 +51,7 @@ function Style(str, options) {
   this.compress = options.compress;
   this.rework = rework(str);
   this.use = this.rework.use.bind(this.rework);
+  this.autoprefixer = options.autoprefixer || true;
 }
 
 /**
@@ -64,5 +66,12 @@ Style.prototype.toString = function(){
   this.use(variant());
   this.use(mixins);
   plugins.map(call).forEach(this.use)
-  return this.rework.toString({ compress: this.compress });
+
+  // Process with rework.
+  var string = this.rework.toString({ compress: this.compress });
+
+  // Process with autoprefixer if needed.
+  if (this.autoprefixer) string = autoprefixer.process(string).css;
+
+  return string;
 };
