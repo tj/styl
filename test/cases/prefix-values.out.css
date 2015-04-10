@@ -1,3 +1,4 @@
 button {
+  background: -webkit-linear-gradient(top, black, white);
   background: linear-gradient(top, black, white);
 }

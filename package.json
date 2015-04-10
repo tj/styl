@@ -2,13 +2,17 @@
   "name": "styl",
   "description": "CSS pre-processor built on Rework",
   "version": "0.2.8",
-  "keywords": ["css", "stylus", "preprocessor", "style"],
+  "keywords": [
+    "css",
+    "stylus",
+    "preprocessor",
+    "style"
+  ],
   "dependencies": {
-    "debug": "*",
+    "autoprefixer-core": "^5.1.8",
     "commander": "1.1.1",
-    "stdin": "0.0.1",
-
     "css-whitespace": "^1.1.0",
+    "debug": "*",
     "rework": "~1.0.0",
     "rework-import": "^2.0.0",
     "rework-inherit": "^0.2.3",
@@ -18,7 +22,8 @@
     "rework-plugin-ease": "^1.0.1",
     "rework-plugin-mixin": "^1.0.0",
     "rework-plugin-references": "^1.0.1",
-    "rework-variant": "^0.2.2"
+    "rework-variant": "^0.2.2",
+    "stdin": "0.0.1"
   },
   "devDependencies": {
     "should": "~1.2.2",

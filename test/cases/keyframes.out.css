@@ -1,3 +1,12 @@
+@-webkit-keyframes fade {
+  from {
+    width: 50px;
+  }
+
+  to {
+    height: 50px;
+  }
+}
 @keyframes fade {
   from {
     width: 50px;

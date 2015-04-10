@@ -1,9 +1,22 @@
-@keyframes animate {
+@-webkit-keyframes animate {
   from {
-    transform: rotateX(0);
+    -webkit-transform: rotateX(0);
+            transform: rotateX(0);
   }
 
   to {
-    transform: rotateX(150deg);
+    -webkit-transform: rotateX(150deg);
+            transform: rotateX(150deg);
+  }
+}
+@keyframes animate {
+  from {
+    -webkit-transform: rotateX(0);
+            transform: rotateX(0);
+  }
+
+  to {
+    -webkit-transform: rotateX(150deg);
+            transform: rotateX(150deg);
   }
 }
