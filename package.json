@@ -9,7 +9,8 @@
     "rework": "0.18.3",
     "commander": "1.1.1",
     "stdin": "0.0.1",
-    "rework-mixins": "1.1.1"
+    "rework-mixins": "1.1.1",
+    "autoprefixer": "~0.8.20131213"
   },
   "devDependencies": {
     "should": "~1.2.2",
